@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="de-CH">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morberry · Bald in Basel</title>
+<meta name="description" content="Açaí Bowls, Matcha und Mor Specials im Glas. Morberry eröffnet bald in Basel.">
+<meta name="theme-color" content="#1c0726">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Morberry · Bald in Basel">
+<meta property="og:description" content="Açaí Bowls, Matcha und Mor Specials im Glas. Morberry eröffnet bald in Basel.">
+<meta property="og:image" content="assets/glaeser-frei.webp">
+<link rel="icon" href="assets/morberry-logo-sm.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat+Brush&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/glaeser-frei.webp">
+<style>
+:root{
+  --bg:#1c0726;
+  --bg-2:#260b34;
+  --brand:#633e77;
+  --lilac:#e2a6ee;
+  --cream:#fff1c4;
+  --text:#f7eef9;
+  --muted:rgba(247,238,249,.68);
+  --soft:#8f6a9e;
+  --line:rgba(226,166,238,.22);
+  --display:"Anton",Impact,"Arial Narrow",sans-serif;
+  --brush:"Caveat Brush","Comic Sans MS",cursive;
+  --body:"Poppins",system-ui,sans-serif;
+  --pad:clamp(20px,5vw,72px);
+  --maxw:1320px;
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{overflow-x:clip;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a,button{color:inherit;font:inherit}
+button{background:none;border:0;padding:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--lilac);outline-offset:4px;border-radius:8px}
+.wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.h2,.statement,.slide__name,.zeile__t{text-wrap:balance}
+.lead,.slide__desc,.zeile__d,.hero__sub{text-wrap:pretty}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:clamp(620px,100svh,1060px);display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(24px,4vh,44px) 0 clamp(16px,3vh,32px);overflow:clip;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;
+  background:
+    radial-gradient(56% 50% at 50% 78%,rgba(150,40,170,.5),transparent 72%),
+    radial-gradient(36% 30% at 10% 16%,rgba(99,62,119,.42),transparent 70%),
+    radial-gradient(30% 26% at 92% 22%,rgba(226,166,238,.12),transparent 70%)}
+.hero__logo{width:clamp(72px,7vw,96px);height:auto;aspect-ratio:1;border-radius:50%;box-shadow:0 14px 40px -10px rgba(10,0,20,.7)}
+.hero__title{margin:clamp(8px,1.6vh,16px) 0 0;font:400 clamp(56px,7.8vw,124px)/.86 var(--display);text-transform:uppercase;letter-spacing:.005em;color:var(--cream);display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;column-gap:.18em;padding:0 var(--pad)}
+.hero__title .w{display:inline-block;overflow:hidden;padding:.04em 0 .02em}
+.hero__title .w>span{display:inline-block}
+.hero__title .brush{font:400 1.16em/1 var(--brush);text-transform:none;color:var(--lilac);letter-spacing:0;transform:rotate(-5deg);padding:0 .06em .12em;overflow:visible}
+.hero__title .brush>span{clip-path:inset(-20% 0 -20% 0)}
+.hero__zeile{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:12px 28px;margin-top:clamp(4px,1.2vh,12px);padding:0 var(--pad)}
+.hero__sub{margin:0;max-width:46ch;font-size:clamp(15px,1.25vw,18px);color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:.6em;height:48px;padding:0 24px;border-radius:999px;background:var(--lilac);color:var(--bg);font:600 15px/1 var(--body);text-decoration:none;white-space:nowrap;transition:transform .35s var(--ease),background-color .25s}
+.btn:hover{background:var(--cream);transform:translateY(-2px)}
+.btn:active{transform:scale(.98)}
+.btn svg{width:16px;height:16px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateY(3px)}
+.hero__stage{position:relative;margin-top:auto;width:100%;display:flex;justify-content:center;pointer-events:none;padding-top:clamp(8px,2vh,24px)}
+.hero__stage::before{content:"";position:absolute;left:50%;bottom:4%;width:min(78%,980px);height:22%;transform:translateX(-50%);border-radius:50%;background:radial-gradient(closest-side,rgba(10,0,18,.75),transparent);filter:blur(6px);z-index:-1}
+.hero__float{will-change:transform}
+.hero__glass{height:clamp(220px,calc(100svh - 385px),640px);width:auto;max-width:96vw;object-fit:contain}
+
+/* ---------- Bowl-Explorer ---------- */
+.explorer{position:relative;overflow-x:clip;padding-top:clamp(80px,10vw,140px);background:linear-gradient(180deg,var(--bg) 0%,var(--bg-2) 40%,var(--bg-2) 70%,var(--bg) 100%)}
+.h2{margin:0;font:400 clamp(44px,6.4vw,96px)/.92 var(--display);text-transform:uppercase;color:var(--cream);letter-spacing:.005em}
+.h2 .soft{color:var(--soft)}
+.lead{max-width:46ch;margin:18px 0 0;color:var(--muted);font-size:clamp(15px,1.3vw,18px)}
+.explorer__pin{position:relative}
+.explorer__buehne{position:relative}
+.explorer__namen{display:none}
+.slides{list-style:none;margin:0;padding:0}
+
+/* Einzelne Bowl (gestapelt: Mobil, ohne JS, reduzierte Bewegung) */
+.slide{--h:min(400px,86vw);display:grid;gap:28px;padding:clamp(56px,8vw,96px) 0 0}
+.slide__fig{position:relative;justify-self:center;height:var(--h);width:calc(var(--h) * .54);perspective:900px}
+.slide__fig::before{content:"";position:absolute;inset:-18% -60%;z-index:0;background:radial-gradient(closest-side,color-mix(in srgb,var(--farbe) 42%,transparent),transparent 70%);opacity:.85;pointer-events:none}
+.slide__wort{position:absolute;left:50%;top:50%;z-index:0;transform:translate(-50%,-50%);font:400 min(calc(var(--h) * .44),calc(var(--h) * 2.1 / var(--n,5)))/.8 var(--display);text-transform:uppercase;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--farbe) 55%,transparent);opacity:.5;pointer-events:none;user-select:none}
+.slide__img{position:relative;z-index:1;height:100%;width:100%;object-fit:contain;object-position:bottom;transform-style:preserve-3d;filter:drop-shadow(0 30px 40px rgba(8,0,16,.55))}
+.slide__punkte{display:none}
+.slide__text{max-width:520px;justify-self:center;text-align:left;width:100%}
+.slide__name{margin:0;font:400 clamp(40px,5vw,72px)/.92 var(--display);text-transform:uppercase;color:var(--cream)}
+.slide__name em{font:400 1.05em/1 var(--brush);font-style:normal;text-transform:none;color:var(--farbe);display:inline-block;transform:rotate(-4deg)}
+.slide__desc{margin:14px 0 0;color:var(--muted);font-size:clamp(15px,1.25vw,17px);max-width:40ch}
+.schichten{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:10px}
+.schicht{display:grid;grid-template-columns:14px auto 1fr;align-items:baseline;gap:4px 12px;padding:10px 0;border-top:1px solid var(--line);transition:color .3s}
+.schicht::before{content:"";width:10px;height:10px;border-radius:50%;background:var(--farbe);align-self:center;transition:transform .35s var(--ease)}
+.schicht b{font:600 12px/1 var(--body);letter-spacing:.08em;text-transform:uppercase;color:var(--farbe)}
+.schicht span{font-size:15px;color:var(--text)}
+.schicht.an::before{transform:scale(1.5)}
+.groessen{display:flex;align-items:center;gap:8px;margin:20px 0 0;font-size:14px;color:var(--muted)}
+.groessen i{font:600 13px/1 var(--body);font-style:normal;display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);color:var(--text)}
+
+/* Desktop mit Pin: Namensliste links, Glas mit Beschriftung rechts */
+.ist-pin .explorer__pin{height:100svh;min-height:640px}
+.ist-pin .explorer__buehne{height:100%;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2.1fr);align-items:center}
+.ist-pin .explorer__namen{display:flex;flex-direction:column;align-items:flex-start;gap:2px;list-style:none;margin:0;padding:0;align-self:start;margin-top:clamp(64px,12vh,120px);position:relative;z-index:3}
+.ist-pin .explorer__namen button{font:400 clamp(30px,3.4vw,52px)/1.08 var(--display);text-transform:uppercase;color:var(--soft);text-align:left;transition:color .35s,transform .5s var(--ease)}
+.ist-pin .explorer__namen button:hover{color:var(--text)}
+.ist-pin .explorer__namen button[aria-current="true"]{color:var(--cream);transform:translateX(14px)}
+.ist-pin .slides{position:absolute;inset:0 var(--pad)}
+.ist-pin .slide{--h:min(64svh,560px,40vw);position:absolute;inset:0;padding:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,2.1fr);align-items:center;gap:0;visibility:hidden}
+.ist-pin .slide.ist-aktiv{visibility:visible}
+.ist-pin .slide__text{grid-column:1;grid-row:1;align-self:end;margin-bottom:clamp(48px,10vh,110px);justify-self:start;max-width:30ch}
+.ist-pin .slide__text .slide__name,.ist-pin .slide__text .schichten{display:none}
+.ist-pin .slide__fig{grid-column:2;grid-row:1;justify-self:start;margin-left:clamp(24px,6vw,110px)}
+.ist-pin .slide__punkte{display:block;position:absolute;inset:0;z-index:2;list-style:none;margin:0;padding:0}
+.punkt{position:absolute;left:62%;top:var(--y);width:calc(var(--h) * .54 * .38 + 64px + 300px);transform:translateY(-50%);display:flex;align-items:center;cursor:default}
+.punkt__dot{position:relative;flex:none;width:14px;height:14px;margin-left:-7px;border-radius:50%;background:var(--cream);box-shadow:0 0 0 4px color-mix(in srgb,var(--farbe) 55%,transparent);transition:transform .35s var(--ease)}
+.punkt__dot::after{content:"";position:absolute;inset:-8px;border-radius:50%;border:1.5px solid var(--cream);opacity:0;transform:scale(.6);transition:opacity .35s,transform .5s var(--ease)}
+.punkt__linie{flex:none;height:1.5px;width:calc(var(--h) * .54 * .38 + 56px);margin:0 14px 0 4px;background:linear-gradient(90deg,var(--cream),color-mix(in srgb,var(--cream) 30%,transparent));transform-origin:left}
+.punkt__text{display:flex;flex-direction:column;gap:4px;min-width:0}
+.punkt__text b{font:600 12px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--farbe)}
+.punkt__text span{font:500 clamp(16px,1.3vw,19px)/1.3 var(--body);color:var(--text);max-width:22ch}
+.punkt.an .punkt__dot{transform:scale(1.35)}
+.punkt.an .punkt__dot::after{opacity:1;transform:scale(1)}
+.punkt.an .punkt__text span{color:var(--cream)}
+
+/* ---------- Konzept ---------- */
+.konzept{padding:clamp(80px,10vw,150px) 0}
+.statement{margin:0;max-width:16ch;font:400 clamp(44px,7vw,108px)/.9 var(--display);text-transform:uppercase;color:var(--cream)}
+.statement .soft{color:var(--soft)}
+.statement .brush{font:400 1.08em/1 var(--brush);text-transform:none;color:var(--lilac);display:inline-block;transform:rotate(-4deg)}
+.zeilen{list-style:none;margin:clamp(48px,6vw,84px) 0 0;padding:0;border-top:1px solid var(--line)}
+.zeile{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:24px;align-items:center;padding:clamp(22px,2.6vw,34px) clamp(4px,1.6vw,24px);border-bottom:1px solid var(--line);isolation:isolate;overflow:hidden}
+.zeile::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--lilac);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease)}
+.zeile:hover::before{transform:scaleY(1)}
+.zeile__t{margin:0;font:400 clamp(30px,3.8vw,56px)/1 var(--display);text-transform:uppercase;color:var(--text);transition:color .3s,transform .5s var(--ease)}
+.zeile__d{margin:0;color:var(--muted);font-size:clamp(15px,1.3vw,18px);transition:color .3s}
+.zeile:hover .zeile__t{color:var(--bg);transform:translateX(10px)}
+.zeile:hover .zeile__d{color:rgba(28,7,38,.82)}
+
+/* ---------- Footer ---------- */
+.fuss{position:relative;padding:clamp(24px,4vw,60px) 0 0;overflow:hidden;background:radial-gradient(70% 60% at 50% 100%,rgba(150,40,170,.42),transparent 72%)}
+.fuss__oben{display:flex;flex-wrap:wrap;gap:28px 40px;align-items:center;justify-content:space-between}
+.fuss__ort{display:flex;align-items:center;gap:20px}
+.fuss__ort img{width:76px;height:76px;border-radius:50%}
+.fuss__ort p{margin:0;font:400 clamp(30px,3.6vw,48px)/1 var(--display);text-transform:uppercase;color:var(--cream)}
+.fuss__ort small{display:block;margin-top:8px;font:400 15px/1.4 var(--body);text-transform:none;color:var(--muted)}
+.fuss__recht{margin:0;font-size:14px;color:rgba(247,238,249,.6)}
+.fuss__mark{margin:clamp(40px,6vw,70px) 0 0;font:400 23.2vw/.78 var(--display);text-transform:uppercase;text-align:center;color:var(--brand);letter-spacing:-.005em;white-space:nowrap;transform:translateY(.1em);user-select:none}
+.fuss__mark span{display:inline-block}
+
+/* ---------- Responsive ---------- */
+@media (min-width:1100px){
+  .hero__sub{max-width:none;white-space:nowrap}
+}
+@media (min-width:760px){
+  .slide{grid-template-columns:auto minmax(0,1fr);align-items:center;gap:clamp(32px,5vw,72px)}
+  .slide__fig{justify-self:end}
+  .slide__text{justify-self:start}
+}
+@media (max-width:700px){
+  .hero{min-height:auto}
+  .hero__glass{height:auto;width:112vw;max-width:none}
+  .hero__zeile{flex-direction:column}
+  .zeile{grid-template-columns:1fr;gap:10px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<header class="hero" aria-labelledby="titel">
+  <img class="hero__logo" src="assets/morberry-logo.png" width="1220" height="1220" alt="Morberry Logo: Açaí, Matcha, Mor Specials">
+  <h1 class="hero__title" id="titel">
+    <span class="w"><span>Bald</span></span>
+    <span class="w"><span>in</span></span>
+    <span class="w brush"><span>Basel</span></span>
+  </h1>
+  <div class="hero__zeile">
+    <p class="hero__sub">Açaí Bowls, Matcha und Mor Specials im Glas. Morberry eröffnet bald in Basel.</p>
+    <a class="btn" href="#bowls">Bowls ansehen
+      <svg viewBox="0 0 256 256" aria-hidden="true"><path fill="currentColor" d="M205.66 149.66l-72 72a8 8 0 0 1-11.32 0l-72-72a8 8 0 0 1 11.32-11.32L120 196.69V40a8 8 0 0 1 16 0v156.69l58.34-58.35a8 8 0 0 1 11.32 11.32Z"/></svg>
+    </a>
+  </div>
+  <div class="hero__stage">
+    <div class="hero__float">
+      <img class="hero__glass" src="assets/glaeser-frei.webp" width="2098" height="984" alt="Drei Morberry-Gläser: Açaí Bowl mit Erdbeeren und Banane, Bowl mit Kiwi und Pistazien, Iced Matcha mit Beeren" fetchpriority="high">
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="explorer" id="bowls" aria-labelledby="bowls-titel">
+    <div class="wrap">
+      <h2 class="h2" id="bowls-titel" data-rein>Das kommt <span class="soft">ins Glas.</span></h2>
+      <p class="lead" data-rein>Vier Signature Bowls, Schicht für Schicht: Açaí als Basis, darauf Crunch, Früchte, Saucen und Toppings.</p>
+    </div>
+
+    <div class="explorer__pin">
+      <div class="wrap explorer__buehne">
+        <ol class="explorer__namen" aria-label="Signature Bowls">
+          <li><button type="button" data-ziel="0" aria-current="true">Berry Love</button></li>
+          <li><button type="button" data-ziel="1">Pistachio Dream</button></li>
+          <li><button type="button" data-ziel="2">Choco Bomb</button></li>
+          <li><button type="button" data-ziel="3">Maracuja Bliss</button></li>
+        </ol>
+
+        <ol class="slides">
+          <li class="slide ist-aktiv" style="--farbe:#ff6b8b">
+            <div class="slide__fig">
+              <span class="slide__wort" aria-hidden="true" style="--n:5">Berry</span>
+              <img class="slide__img" src="assets/bowl-berry-love.webp" width="441" height="822" loading="lazy" alt="Berry Love im Glas: Açaí, Granola, Banane, Heidelbeeren und Erdbeeren">
+              <ul class="slide__punkte" aria-hidden="true">
+                <li class="punkt" style="--y:16%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Erdbeere, Erdbeersauce</span></span></li>
+                <li class="punkt" style="--y:36%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Früchte</b><span>Heidelbeere, Banane</span></span></li>
+                <li class="punkt" style="--y:55%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Crunch</b><span>Granola, Kakao-Nibs</span></span></li>
+                <li class="punkt" style="--y:80%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Basis</b><span>Açaí</span></span></li>
+              </ul>
+            </div>
+            <div class="slide__text">
+              <h3 class="slide__name">Berry <em>Love</em></h3>
+              <p class="slide__desc">Die fruchtige Bowl: Erdbeeren, Heidelbeeren und Banane auf Açaí, dazu Erdbeersauce und Crunch.</p>
+              <ul class="schichten">
+                <li class="schicht"><b>Topping</b><span>Erdbeere, Erdbeersauce</span></li>
+                <li class="schicht"><b>Früchte</b><span>Heidelbeere, Banane</span></li>
+                <li class="schicht"><b>Crunch</b><span>Granola, Kakao-Nibs</span></li>
+                <li class="schicht"><b>Basis</b><span>Açaí</span></li>
+              </ul>
+              <p class="groessen">Grössen <i>S</i><i>M</i><i>L</i></p>
+            </div>
+          </li>
+
+          <li class="slide" style="--farbe:#a8d66a">
+            <div class="slide__fig">
+              <span class="slide__wort" aria-hidden="true" style="--n:9">Pistachio</span>
+              <img class="slide__img" src="assets/bowl-pistachio-dream.webp" width="441" height="846" loading="lazy" alt="Pistachio Dream im Glas: Açaí, Granola, weisse Schokolade und Pistaziencreme">
+              <ul class="slide__punkte" aria-hidden="true">
+                <li class="punkt" style="--y:14%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Pistaziencreme, Kiwi</span></span></li>
+                <li class="punkt" style="--y:33%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Crunch</b><span>Granola, weisse Schokolade</span></span></li>
+                <li class="punkt" style="--y:50%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Extras</b><span>Kokosraspeln, Datteln</span></span></li>
+                <li class="punkt" style="--y:78%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Basis</b><span>Açaí</span></span></li>
+              </ul>
+            </div>
+            <div class="slide__text">
+              <h3 class="slide__name">Pistachio <em>Dream</em></h3>
+              <p class="slide__desc">Die cremige Bowl: Pistaziencreme und Kiwi, dazu weisse Schokolade, Kokos und Datteln.</p>
+              <ul class="schichten">
+                <li class="schicht"><b>Topping</b><span>Pistaziencreme, Kiwi</span></li>
+                <li class="schicht"><b>Crunch</b><span>Granola, weisse Schokolade</span></li>
+                <li class="schicht"><b>Extras</b><span>Kokosraspeln, Datteln</span></li>
+                <li class="schicht"><b>Basis</b><span>Açaí</span></li>
+              </ul>
+              <p class="groessen">Grössen <i>S</i><i>M</i><i>L</i></p>
+            </div>
+          </li>
+
+          <li class="slide" style="--farbe:#d29a6a">
+            <div class="slide__fig">
+              <span class="slide__wort" aria-hidden="true" style="--n:5">Choco</span>
+              <img class="slide__img" src="assets/bowl-choco-bomb.webp" width="423" height="831" loading="lazy" alt="Choco Bomb im Glas: Açaí, Schokostücke, Oreo und Brownie">
+              <ul class="slide__punkte" aria-hidden="true">
+                <li class="punkt" style="--y:16%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Oreo, Brownie, Kinderriegel</span></span></li>
+                <li class="punkt" style="--y:34%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Sauce</b><span>Nutella</span></span></li>
+                <li class="punkt" style="--y:50%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Früchte</b><span>Erdbeeren, Bananen</span></span></li>
+                <li class="punkt" style="--y:78%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Basis</b><span>Açaí</span></span></li>
+              </ul>
+            </div>
+            <div class="slide__text">
+              <h3 class="slide__name">Choco <em>Bomb</em></h3>
+              <p class="slide__desc">Die schokoladige Bowl: Oreo, Brownie, Kinderriegel und Nutella, dazu Erdbeeren und Bananen.</p>
+              <ul class="schichten">
+                <li class="schicht"><b>Topping</b><span>Oreo, Brownie, Kinderriegel</span></li>
+                <li class="schicht"><b>Sauce</b><span>Nutella</span></li>
+                <li class="schicht"><b>Früchte</b><span>Erdbeeren, Bananen</span></li>
+                <li class="schicht"><b>Basis</b><span>Açaí</span></li>
+              </ul>
+              <p class="groessen">Grössen <i>S</i><i>M</i><i>L</i></p>
+            </div>
+          </li>
+
+          <li class="slide" style="--farbe:#ffb648">
+            <div class="slide__fig">
+              <span class="slide__wort" aria-hidden="true" style="--n:8">Maracuja</span>
+              <img class="slide__img" src="assets/bowl-maracuja-bliss.webp" width="399" height="813" loading="lazy" alt="Maracuja Bliss im Glas: Açaí, Früchte, Granola und Maracuja">
+              <ul class="slide__punkte" aria-hidden="true">
+                <li class="punkt" style="--y:14%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Maracujasauce, Kokosstreifen</span></span></li>
+                <li class="punkt" style="--y:34%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Crunch</b><span>Granola, Chiasamen</span></span></li>
+                <li class="punkt" style="--y:61%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Früchte</b><span>Heidelbeere</span></span></li>
+                <li class="punkt" style="--y:80%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Basis</b><span>Açaí</span></span></li>
+              </ul>
+            </div>
+            <div class="slide__text">
+              <h3 class="slide__name">Maracuja <em>Bliss</em></h3>
+              <p class="slide__desc">Die exotische Bowl: Maracujasauce und Kokosstreifen, dazu Chiasamen, Granola und Heidelbeere.</p>
+              <ul class="schichten">
+                <li class="schicht"><b>Topping</b><span>Maracujasauce, Kokosstreifen</span></li>
+                <li class="schicht"><b>Crunch</b><span>Granola, Chiasamen</span></li>
+                <li class="schicht"><b>Früchte</b><span>Heidelbeere</span></li>
+                <li class="schicht"><b>Basis</b><span>Açaí</span></li>
+              </ul>
+              <p class="groessen">Grössen <i>S</i><i>M</i><i>L</i></p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="konzept" aria-labelledby="konzept-titel">
+    <div class="wrap">
+      <h2 class="statement" id="konzept-titel" data-rein>Deine Bowl. <span class="soft">Deine</span> <span class="brush">Kombination.</span></h2>
+      <ul class="zeilen">
+        <li class="zeile" data-zeile>
+          <h3 class="zeile__t">Signature Bowls</h3>
+          <p class="zeile__d">Açaí im Glas mit Früchten, Saucen und Toppings.</p>
+        </li>
+        <li class="zeile" data-zeile>
+          <h3 class="zeile__t">Build your Bowl</h3>
+          <p class="zeile__d">Grösse, Sauce, Toppings und Früchte frei kombinieren.</p>
+        </li>
+        <li class="zeile" data-zeile>
+          <h3 class="zeile__t">Matcha &amp; Mor Specials</h3>
+          <p class="zeile__d">Matcha-Variationen, Iced Latte und fruchtige Drinks.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="fuss">
+  <div class="wrap fuss__oben">
+    <div class="fuss__ort" data-rein>
+      <img src="assets/morberry-logo-sm.png" width="320" height="320" alt="" loading="lazy">
+      <p>Bald in Basel<small>Eröffnung und Adresse folgen in Kürze.</small></p>
+    </div>
+    <p class="fuss__recht">© 2026 Morberry</p>
+  </div>
+  <p class="fuss__mark" aria-hidden="true"><span>M</span><span>o</span><span>r</span><span>b</span><span>e</span><span>r</span><span>r</span><span>y</span></p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+  // Schichten-Liste und Punkte am Glas gegenseitig hervorheben (gilt auch ohne Animationen)
+  document.querySelectorAll('.slide').forEach(function(slide){
+    var zeilen = slide.querySelectorAll('.schicht'), punkte = slide.querySelectorAll('.punkt');
+    function an(i, ja){ if (zeilen[i]) zeilen[i].classList.toggle('an', ja); if (punkte[i]) punkte[i].classList.toggle('an', ja); }
+    [zeilen, punkte].forEach(function(liste){
+      liste.forEach(function(el, i){
+        el.addEventListener('mouseenter', function(){ an(i, true); });
+        el.addEventListener('mouseleave', function(){ an(i, false); });
+      });
+    });
+  });
+
+  var statisch = /[?&]static=1/.test(location.search);
+  var ruhig = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (statisch || ruhig || !window.gsap) return;
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Auftritt: Logo, Titel, "Basel" als Pinselstrich, dann steigen die Glaeser auf
+  var tl = gsap.timeline({defaults:{ease:'expo.out'}});
+  tl.from('.hero__logo',{scale:.6,rotate:-30,opacity:0,duration:1.1})
+    .from('.hero__title .w:not(.brush)>span',{yPercent:110,duration:1,stagger:.08},'-=.75')
+    .from('.hero__title .brush>span',{clipPath:'inset(-20% 100% -20% 0)',duration:.9,ease:'power3.inOut'},'-=.55')
+    .from('.hero__zeile > *',{y:18,opacity:0,duration:.8,stagger:.08},'-=.45')
+    .from('.hero__glass',{y:120,scale:.92,opacity:0,duration:1.5},'-=1');
+
+  // Glaeser schweben leicht und folgen der Maus; Pause, sobald der Kopf aus dem Bild ist
+  var schweben = gsap.to('.hero__float',{y:-10,duration:2.6,ease:'sine.inOut',yoyo:true,repeat:-1,paused:true});
+  ScrollTrigger.create({trigger:'.hero',start:'top top',end:'bottom top',onToggle:function(s){ s.isActive ? schweben.play() : schweben.pause(); }});
+  schweben.play();
+  if (window.matchMedia('(hover:hover)').matches){
+    var gx = gsap.quickTo('.hero__glass','x',{duration:.9,ease:'power3'}), gr = gsap.quickTo('.hero__glass','rotation',{duration:.9,ease:'power3'});
+    document.querySelector('.hero').addEventListener('pointermove',function(e){ var d=(e.clientX/innerWidth-.5); gx(d*-26); gr(d*1.2); });
+  }
+  gsap.to('.hero__stage',{yPercent:10,ease:'none',scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom top',scrub:true}});
+
+  gsap.utils.toArray('[data-rein]').forEach(function(el){
+    gsap.from(el,{y:40,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 85%',once:true}});
+  });
+  gsap.from('[data-zeile]',{y:30,opacity:0,duration:.9,ease:'expo.out',stagger:.1,scrollTrigger:{trigger:'.zeilen',start:'top 85%',once:true}});
+  gsap.from('.fuss__mark span',{yPercent:100,duration:1.1,ease:'expo.out',stagger:.05,scrollTrigger:{trigger:'.fuss__mark',start:'top 95%',once:true}});
+
+  var explorer = document.querySelector('.explorer');
+  var slides = gsap.utils.toArray('.slide');
+  var knoepfe = gsap.utils.toArray('.explorer__namen button');
+  var mm = gsap.matchMedia();
+
+  // Desktop: Bereich bleibt stehen, Scrollen blaettert durch die vier Bowls
+  mm.add('(min-width:1000px) and (min-height:620px)', function(){
+    explorer.classList.add('ist-pin');
+    var aktiv = 0, laeuft;
+    slides.forEach(function(s,i){ s.classList.toggle('ist-aktiv', i===0); });
+
+    function zeige(i){
+      if (i === aktiv) return;
+      var alt = slides[aktiv], neu = slides[i], dir = i > aktiv ? 1 : -1;
+      aktiv = i;
+      knoepfe.forEach(function(b,k){ b.setAttribute('aria-current', k===i ? 'true' : 'false'); });
+      if (laeuft) laeuft.progress(1);
+      neu.classList.add('ist-aktiv');
+      laeuft = gsap.timeline({onComplete:function(){ alt.classList.remove('ist-aktiv'); }})
+        .to(alt.querySelector('.slide__img'),{yPercent:-28*dir,rotation:-7*dir,opacity:0,duration:.45,ease:'power3.in'},0)
+        .to(alt.querySelectorAll('.punkt, .slide__text, .slide__wort'),{opacity:0,duration:.3},0)
+        .fromTo(neu.querySelector('.slide__img'),{yPercent:36*dir,rotation:8*dir,opacity:0},{yPercent:0,rotation:0,opacity:1,duration:1,ease:'expo.out'},.3)
+        .fromTo(neu.querySelector('.slide__wort'),{xPercent:-50+12*dir,yPercent:-50,opacity:0},{xPercent:-50,yPercent:-50,opacity:.5,duration:1.2,ease:'expo.out'},.3)
+        .fromTo(neu.querySelector('.slide__text'),{y:24*dir,opacity:0},{y:0,opacity:1,duration:.8,ease:'expo.out'},.45)
+        .fromTo(neu.querySelectorAll('.punkt'),{opacity:0},{opacity:1,duration:.01,stagger:.09},.55)
+        .fromTo(neu.querySelectorAll('.punkt__dot'),{scale:0},{scale:1,duration:.6,ease:'expo.out',stagger:.09},.55)
+        .fromTo(neu.querySelectorAll('.punkt__linie'),{scaleX:0},{scaleX:1,duration:.7,ease:'expo.out',stagger:.09},.62)
+        .fromTo(neu.querySelectorAll('.punkt__text'),{x:-16,opacity:0},{x:0,opacity:1,duration:.7,ease:'expo.out',stagger:.09},.7);
+    }
+
+    var st = ScrollTrigger.create({
+      trigger:'.explorer__pin', start:'top top', end:function(){ return '+=' + innerHeight * 2.4; },
+      pin:true, anticipatePin:1,
+      snap:{snapTo:1/3, duration:{min:.2,max:.6}, ease:'power2.inOut', delay:.05},
+      onUpdate:function(s){ zeige(Math.round(s.progress * 3)); }
+    });
+
+    function klick(e){
+      var i = +e.currentTarget.dataset.ziel;
+      window.scrollTo({top: st.start + (st.end - st.start) * i / 3, behavior:'smooth'});
+    }
+    knoepfe.forEach(function(b){ b.addEventListener('click', klick); });
+
+    // Glas kippt leicht mit der Maus
+    var kipp = [];
+    slides.forEach(function(s){
+      var fig = s.querySelector('.slide__fig'), img = s.querySelector('.slide__img');
+      var ry = gsap.quickTo(img,'rotationY',{duration:.8,ease:'power3'}), rx = gsap.quickTo(img,'rotationX',{duration:.8,ease:'power3'});
+      function bewegen(e){ var r = fig.getBoundingClientRect(); ry(((e.clientX-r.left)/r.width-.5)*16); rx(-((e.clientY-r.top)/r.height-.5)*8); }
+      function weg(){ ry(0); rx(0); }
+      fig.addEventListener('pointermove', bewegen); fig.addEventListener('pointerleave', weg);
+      kipp.push([fig, bewegen, weg]);
+    });
+
+    return function(){
+      explorer.classList.remove('ist-pin');
+      knoepfe.forEach(function(b){ b.removeEventListener('click', klick); });
+      kipp.forEach(function(k){ k[0].removeEventListener('pointermove', k[1]); k[0].removeEventListener('pointerleave', k[2]); });
+      if (laeuft) laeuft.kill();
+      gsap.set('.slide__img, .slide__text, .slide__wort, .punkt, .punkt__dot, .punkt__linie, .punkt__text',{clearProps:'all'});
+    };
+  });
+
+  // Mobil und Tablet: Bowls untereinander, jede blendet beim Scrollen ein
+  mm.add('(max-width:999px), (max-height:619px)', function(){
+    slides.forEach(function(s){
+      gsap.from(s.querySelector('.slide__img'),{y:80,rotation:-5,opacity:0,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:s,start:'top 80%',once:true}});
+      gsap.from(s.querySelectorAll('.slide__name, .slide__desc, .schicht, .groessen'),{y:24,opacity:0,duration:.8,ease:'expo.out',stagger:.07,scrollTrigger:{trigger:s,start:'top 70%',once:true}});
+    });
+  });
+})();
+</script>
+</body>
+</html>
