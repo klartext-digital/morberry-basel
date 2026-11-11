@@ -70,18 +70,17 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .hero__title .brush>span{clip-path:inset(-20% 0 -20% 0)}
 .hero__sub{margin:clamp(6px,1.2vh,12px) 0 0;max-width:52ch;padding:0 var(--pad);font-size:clamp(15px,1.25vw,18px);color:var(--muted)}
 .hero__knoepfe{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:clamp(14px,2.4vh,24px);padding:0 var(--pad)}
-.hero__stage{position:relative;flex:1 1 auto;min-height:200px;width:100%;margin-top:clamp(26px,4.6vh,54px);display:flex;align-items:flex-end;justify-content:center;perspective:1400px}
-.glas3d{position:relative;flex:none;width:min(94vw,calc((100svh - 430px) * 2.132));aspect-ratio:1049/492;touch-action:pan-y}
-.glas3d__kipp{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
-.glas3d__img,.glas3d__canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
-.glas3d__canvas{opacity:0;transition:opacity .4s}
-.ist-3d .glas3d__canvas{opacity:1}
-.ist-3d .glas3d__img{opacity:0}
-.glas3d__glanz{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .5s;mix-blend-mode:overlay;
-  background:radial-gradient(circle at var(--gx,50%) var(--gy,35%),rgba(255,255,255,.75),rgba(255,255,255,0) 32%);
-  -webkit-mask:url(assets/glaeser-frei.webp) center/100% 100% no-repeat;mask:url(assets/glaeser-frei.webp) center/100% 100% no-repeat}
-.glas3d.ist-hover .glas3d__glanz{opacity:1}
-.glas3d__schatten{position:absolute;left:12%;right:12%;bottom:-3%;height:14%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(8,0,16,.8),transparent);filter:blur(8px);will-change:transform}
+.hero__stage{position:relative;flex:1 1 auto;min-height:200px;width:100%;margin-top:clamp(30px,5vh,60px);margin-bottom:clamp(24px,5vh,56px);display:flex;align-items:center;justify-content:center}
+.glas3d{position:relative;flex:none;width:min(94vw,calc((100svh - 430px) * 2.132));aspect-ratio:1049/513}
+.glas3d__kipp{position:absolute;inset:0}
+.glas3d__img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 28px 36px rgba(8,0,16,.45));transition:transform .7s var(--ease),filter .7s var(--ease)}
+.glas3d__schatten{position:absolute;left:12%;right:12%;bottom:-3%;height:14%;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(8,0,16,.8),transparent);filter:blur(8px);transition:transform .7s var(--ease),opacity .7s var(--ease)}
+.glas3d::before{content:"";position:absolute;inset:-8% 4% 0;z-index:-1;border-radius:50%;background:radial-gradient(closest-side,rgba(226,166,238,.28),transparent 70%);opacity:0;transition:opacity .7s var(--ease);pointer-events:none}
+@media (hover:hover) and (pointer:fine){
+  .glas3d:hover .glas3d__img{transform:translateY(-10px) scale(1.02);filter:drop-shadow(0 40px 44px rgba(8,0,16,.55)) brightness(1.04)}
+  .glas3d:hover .glas3d__schatten{transform:scaleX(.92);opacity:.75}
+  .glas3d:hover::before{opacity:1}
+}
 
 /* ---------- Eröffnungs-Code ---------- */
 .code{position:relative;padding:clamp(90px,11vw,160px) 0 clamp(80px,10vw,140px);overflow-x:clip;background:radial-gradient(60% 50% at 50% 62%,rgba(226,166,238,.14),transparent 70%)}
@@ -91,12 +90,12 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .h2 .brush{font:400 1.08em/1 var(--brush);text-transform:none;color:var(--lilac);display:inline-block;transform:rotate(-4deg)}
 .lead{max-width:46ch;margin:18px 0 0;color:var(--muted);font-size:clamp(15px,1.3vw,18px)}
 .code .lead{margin-inline:auto}
-.ticket-buehne{position:relative;width:min(100%,900px);margin-top:clamp(48px,6vw,80px);perspective:1200px}
+.ticket-buehne{position:relative;width:min(100%,900px);margin-top:clamp(48px,6vw,80px);}
 .deko{position:absolute;z-index:0;pointer-events:none;height:auto;filter:drop-shadow(0 24px 30px rgba(8,0,16,.55));will-change:transform}
 .deko--erdbeere{width:clamp(110px,15vw,200px);left:-5%;top:-24%;transform:rotate(-14deg)}
 .deko--heidel{width:clamp(90px,11vw,150px);right:-1%;bottom:-11%;transform:rotate(8deg)}
 .deko--heidel2{width:clamp(56px,6vw,84px);right:7%;top:-15%;transform:rotate(-20deg)}
-.ticket{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,32%);border-radius:30px;transform-style:preserve-3d;will-change:transform;
+.ticket{position:relative;z-index:1;display:grid;grid-template-columns:minmax(0,1fr) minmax(250px,32%);border-radius:30px;transition:transform .6s var(--ease),filter .6s var(--ease);
   filter:drop-shadow(0 40px 50px rgba(8,0,16,.55));
   -webkit-mask:radial-gradient(circle at calc(68% + 0px) 0,transparent 20px,#000 21px) top/100% 51% no-repeat,radial-gradient(circle at calc(68% + 0px) 100%,transparent 20px,#000 21px) bottom/100% 51% no-repeat;
   mask:radial-gradient(circle at 68% 0,transparent 20px,#000 21px) top/100% 51% no-repeat,radial-gradient(circle at 68% 100%,transparent 20px,#000 21px) bottom/100% 51% no-repeat}
@@ -117,10 +116,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .ticket__kopieren svg{width:16px;height:16px}
 .ticket__kopieren:hover{color:var(--cream);background:rgba(226,166,238,.12)}
 .ticket.ist-offen .ticket__kopieren{display:inline-flex}
-.ticket__glanz{position:absolute;inset:0;z-index:2;pointer-events:none;border-radius:30px;opacity:0;transition:opacity .4s;mix-blend-mode:soft-light;
-  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.9),rgba(255,255,255,0) 45%),
-    linear-gradient(115deg,transparent 30%,rgba(255,255,255,.28) calc(var(--gx,50%) - 5%),transparent calc(var(--gx,50%) + 12%))}
-.ticket.ist-hover .ticket__glanz{opacity:1}
+@media (hover:hover) and (pointer:fine){.ticket:hover{transform:translateY(-6px);filter:drop-shadow(0 52px 56px rgba(8,0,16,.6))}}
 .code__hinweis{max-width:52ch;margin:clamp(40px,5vw,60px) auto 0;font-size:14px;color:var(--muted)}
 
 /* ---------- Bowl-Explorer ---------- */
@@ -130,15 +126,12 @@ button{background:none;border:0;padding:0;cursor:pointer}
 .explorer__namen{display:none}
 .slides{list-style:none;margin:0;padding:0}
 .slide{--h:min(400px,86vw);display:grid;gap:28px;padding:clamp(56px,8vw,96px) 0 0}
-.slide__fig{position:relative;justify-self:center;height:var(--h);width:calc(var(--h) * .54);perspective:900px}
+.slide__fig{position:relative;justify-self:center;height:var(--h);width:calc(var(--h) * .54)}
 .slide__fig::before{content:"";position:absolute;inset:-18% -60%;z-index:0;background:radial-gradient(closest-side,color-mix(in srgb,var(--farbe) 42%,transparent),transparent 70%);opacity:.85;pointer-events:none}
 .slide__wort{position:absolute;left:50%;top:50%;z-index:0;transform:translate(-50%,-50%);font:400 min(calc(var(--h) * .44),calc(var(--h) * 2.1 / var(--n,5)))/.8 var(--display);text-transform:uppercase;white-space:nowrap;color:transparent;-webkit-text-stroke:1.5px color-mix(in srgb,var(--farbe) 55%,transparent);opacity:.5;pointer-events:none;user-select:none}
-.slide__dreh{position:absolute;inset:0;z-index:1;transform-style:preserve-3d;will-change:transform}
+.slide__dreh{position:absolute;inset:0;z-index:1;transition:transform .6s var(--ease)}
+@media (hover:hover) and (pointer:fine){.slide__fig:hover .slide__dreh{transform:translateY(-8px)}}
 .slide__img{position:absolute;inset:0;height:100%;width:100%;object-fit:contain;object-position:bottom;filter:drop-shadow(0 30px 40px rgba(8,0,16,.55))}
-.slide__glanz{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .4s;mix-blend-mode:overlay;
-  background:radial-gradient(circle at var(--gx,50%) var(--gy,30%),rgba(255,255,255,.85),rgba(255,255,255,0) 40%);
-  -webkit-mask:var(--maske) center bottom/contain no-repeat;mask:var(--maske) center bottom/contain no-repeat}
-.slide__fig.ist-hover .slide__glanz{opacity:1}
 .slide__punkte{display:none}
 .slide__text{max-width:520px;justify-self:center;text-align:left;width:100%}
 .slide__name{margin:0;font:400 clamp(40px,5vw,72px)/.92 var(--display);text-transform:uppercase;color:var(--cream)}
@@ -222,8 +215,9 @@ button{background:none;border:0;padding:0;cursor:pointer}
   .glas3d{width:94vw}
 }
 @media (max-width:700px){
-  .hero{height:auto;min-height:0;max-height:none;padding-bottom:28px}
-  .hero__stage{flex:none;min-height:0}
+  .hero{height:auto;min-height:0;max-height:none;padding-bottom:12px}
+  .hero__stage{flex:none;min-height:0;margin-bottom:0}
+  .code{padding-top:64px}
   .glas3d{width:100vw}
   .zeile{grid-template-columns:1fr;gap:10px}
 }
@@ -253,9 +247,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
   <div class="hero__stage">
     <div class="glas3d" data-glas3d>
       <div class="glas3d__kipp">
-        <img class="glas3d__img" src="assets/glaeser-frei.webp" width="2098" height="984" alt="Drei Morberry-Gläser: Açaí Bowl mit Erdbeeren und Banane, Bowl mit Kiwi und Pistazien, Iced Matcha mit Beeren" fetchpriority="high">
-        <canvas class="glas3d__canvas" aria-hidden="true"></canvas>
-        <span class="glas3d__glanz" aria-hidden="true"></span>
+        <img class="glas3d__img" src="assets/glaeser-frei.webp?v=2" width="2098" height="1026" alt="Drei Morberry-Gläser: Açaí Bowl mit Erdbeeren und Banane, Bowl mit Kiwi und Pistazien, Iced Matcha mit Beeren" fetchpriority="high">
       </div>
       <span class="glas3d__schatten" aria-hidden="true"></span>
     </div>
@@ -291,7 +283,6 @@ button{background:none;border:0;padding:0;cursor:pointer}
               <span>Nochmals kopieren</span>
             </button>
           </div>
-          <span class="ticket__glanz" aria-hidden="true"></span>
         </div>
       </div>
 
@@ -320,7 +311,6 @@ button{background:none;border:0;padding:0;cursor:pointer}
               <span class="slide__wort" aria-hidden="true" style="--n:5">Berry</span>
               <div class="slide__dreh">
                 <img class="slide__img" src="assets/bowl-berry-love.webp" width="441" height="822" loading="lazy" alt="Berry Love im Glas: Açaí, Granola, Banane, Heidelbeeren und Erdbeeren">
-                <span class="slide__glanz" aria-hidden="true"></span>
               </div>
               <ul class="slide__punkte" aria-hidden="true">
                 <li class="punkt" style="--y:16%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Erdbeere, Erdbeersauce</span></span></li>
@@ -347,7 +337,6 @@ button{background:none;border:0;padding:0;cursor:pointer}
               <span class="slide__wort" aria-hidden="true" style="--n:9">Pistachio</span>
               <div class="slide__dreh">
                 <img class="slide__img" src="assets/bowl-pistachio-dream.webp" width="441" height="846" loading="lazy" alt="Pistachio Dream im Glas: Açaí, Granola, weisse Schokolade und Pistaziencreme">
-                <span class="slide__glanz" aria-hidden="true"></span>
               </div>
               <ul class="slide__punkte" aria-hidden="true">
                 <li class="punkt" style="--y:14%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Pistaziencreme, Kiwi</span></span></li>
@@ -374,7 +363,6 @@ button{background:none;border:0;padding:0;cursor:pointer}
               <span class="slide__wort" aria-hidden="true" style="--n:5">Choco</span>
               <div class="slide__dreh">
                 <img class="slide__img" src="assets/bowl-choco-bomb.webp" width="423" height="831" loading="lazy" alt="Choco Bomb im Glas: Açaí, Schokostücke, Oreo und Brownie">
-                <span class="slide__glanz" aria-hidden="true"></span>
               </div>
               <ul class="slide__punkte" aria-hidden="true">
                 <li class="punkt" style="--y:16%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Oreo, Brownie, Kinderriegel</span></span></li>
@@ -401,7 +389,6 @@ button{background:none;border:0;padding:0;cursor:pointer}
               <span class="slide__wort" aria-hidden="true" style="--n:8">Maracuja</span>
               <div class="slide__dreh">
                 <img class="slide__img" src="assets/bowl-maracuja-bliss.webp" width="399" height="813" loading="lazy" alt="Maracuja Bliss im Glas: Açaí, Früchte, Granola und Maracuja">
-                <span class="slide__glanz" aria-hidden="true"></span>
               </div>
               <ul class="slide__punkte" aria-hidden="true">
                 <li class="punkt" style="--y:14%"><i class="punkt__dot"></i><i class="punkt__linie"></i><span class="punkt__text"><b>Topping</b><span>Maracujasauce, Kokosstreifen</span></span></li>
@@ -469,7 +456,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
   var feinZeiger = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
 
   /* ---------- Gläserbild immer vollständig in den freien Platz einpassen ---------- */
-  var VERH = 1049 / 492;
+  var VERH = 1049 / 513;
   var buehne = document.querySelector('.hero__stage'), glas = document.querySelector('[data-glas3d]');
   function einpassen(){
     var w;
@@ -528,88 +515,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
   if (!bewegt) return;
   gsap.registerPlugin(ScrollTrigger);
 
-  /* ---------- 3D-Gläser: Tiefenkarte in WebGL, Kippen per CSS ---------- */
-  var gl3 = (function(){
-    var canvas = glas.querySelector('canvas');
-    var gl = canvas.getContext('webgl', {premultipliedAlpha:true, alpha:true, antialias:false});
-    if (!gl) return null;
-    var vs = 'attribute vec2 p;varying vec2 v;void main(){v=vec2(p.x*.5+.5,.5-p.y*.5);gl_Position=vec4(p,0.,1.);}';
-    var fs = [
-      'precision mediump float;',
-      'uniform sampler2D uT,uD;uniform vec2 uM;uniform float uMo,uS;varying vec2 v;',
-      'float tf(vec2 u){return texture2D(uD,u).r;}',
-      'void main(){',
-      '  vec2 p=v;',
-      // Parallaxe nach Tiefe, mehrfach nachgeführt damit Kanten sauber bleiben
-      '  for(int i=0;i<4;i++){float d=tf(p);p=v-uM*(d-.5)*uS-vec2(0.,uMo*(d-.45)*.26);}',
-      // Morph beim Scrollen: flüssige Welle und Farbversatz
-      '  p.x+=sin(p.y*16.+uMo*8.)*.014*uMo;',
-      '  p.y+=sin(p.x*10.+uMo*6.)*.01*uMo;',
-      '  float sp=.008*uMo;',
-      '  vec4 c=texture2D(uT,p);',
-      '  vec4 r=texture2D(uT,p+vec2(sp,0.));vec4 b=texture2D(uT,p-vec2(sp,0.));',
-      '  c=vec4(mix(c.r,r.r,uMo),c.g,mix(c.b,b.b,uMo),max(c.a,max(r.a,b.a)*uMo));',
-      '  if(p.x<0.||p.x>1.||p.y<0.||p.y>1.)c=vec4(0.);',
-      '  gl_FragColor=c*(1.-uMo*.55);',
-      '}'].join('\n');
-    function shader(typ, src){ var s = gl.createShader(typ); gl.shaderSource(s, src); gl.compileShader(s); return s; }
-    var prog = gl.createProgram();
-    gl.attachShader(prog, shader(gl.VERTEX_SHADER, vs)); gl.attachShader(prog, shader(gl.FRAGMENT_SHADER, fs)); gl.linkProgram(prog);
-    if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return null;
-    gl.useProgram(prog);
-    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1,1,-1,-1,1,1,1]), gl.STATIC_DRAW);
-    var lp = gl.getAttribLocation(prog, 'p'); gl.enableVertexAttribArray(lp); gl.vertexAttribPointer(lp, 2, gl.FLOAT, false, 0, 0);
-    var u = {}; ['uT','uD','uM','uMo','uS'].forEach(function(n){ u[n] = gl.getUniformLocation(prog, n); });
-    function textur(img, einheit, vormultipliziert){
-      var t = gl.createTexture(); gl.activeTexture(gl.TEXTURE0 + einheit); gl.bindTexture(gl.TEXTURE_2D, t);
-      gl.pixelStorei(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL, vormultipliziert);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, img);
-      [gl.TEXTURE_WRAP_S, gl.TEXTURE_WRAP_T].forEach(function(k){ gl.texParameteri(gl.TEXTURE_2D, k, gl.CLAMP_TO_EDGE); });
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR); gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-    }
-    var zustand = {mx:0, my:0, morph:0}, bereit = false;
-    function groesse(){
-      var dpr = Math.min(devicePixelRatio || 1, 2);
-      canvas.width = Math.max(2, Math.round(canvas.clientWidth * dpr)); canvas.height = Math.max(2, Math.round(canvas.clientHeight * dpr));
-      gl.viewport(0, 0, canvas.width, canvas.height); zeichnen();
-    }
-    function zeichnen(){
-      if (!bereit) return;
-      gl.clearColor(0,0,0,0); gl.clear(gl.COLOR_BUFFER_BIT);
-      gl.uniform1i(u.uT, 0); gl.uniform1i(u.uD, 1);
-      gl.uniform2f(u.uM, zustand.mx, zustand.my); gl.uniform1f(u.uMo, zustand.morph); gl.uniform1f(u.uS, .056);
-      gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
-    }
-    function laden(src){ return new Promise(function(ok, fehl){ var i = new Image(); i.onload = function(){ ok(i); }; i.onerror = fehl; i.src = src; }); }
-    Promise.all([laden('assets/glaeser-frei.webp'), laden('assets/glaeser-tiefe.png')]).then(function(b){
-      textur(b[0], 0, true); textur(b[1], 1, false); bereit = true; groesse(); glas.classList.add('ist-3d');
-    }).catch(function(){});
-    if (window.ResizeObserver) new ResizeObserver(groesse).observe(canvas);
-    return {zustand:zustand, zeichnen:zeichnen};
-  })();
-
-  var kipp = glas.querySelector('.glas3d__kipp'), schatten = glas.querySelector('.glas3d__schatten'), hero = document.querySelector('.hero');
-  var proxy = gl3 ? gl3.zustand : {mx:0, my:0, morph:0};
-  var neuZeichnen = function(){ if (gl3) gl3.zeichnen(); };
-  var zielMx = gsap.quickTo(proxy, 'mx', {duration:.9, ease:'power3', onUpdate:neuZeichnen});
-  var zielMy = gsap.quickTo(proxy, 'my', {duration:.9, ease:'power3', onUpdate:neuZeichnen});
-  var kippY = gsap.quickTo(kipp, 'rotationY', {duration:.9, ease:'power3'});
-  var kippX = gsap.quickTo(kipp, 'rotationX', {duration:.9, ease:'power3'});
-  var schattenX = gsap.quickTo(schatten, 'x', {duration:.9, ease:'power3'});
-
-  if (feinZeiger){
-    hero.addEventListener('pointermove', function(e){
-      var r = glas.getBoundingClientRect();
-      var nx = gsap.utils.clamp(-1, 1, (e.clientX - (r.left + r.width / 2)) / (r.width / 2));
-      var ny = gsap.utils.clamp(-1, 1, (e.clientY - (r.top + r.height / 2)) / (r.height / 1.2));
-      zielMx(nx); zielMy(ny); kippY(nx * 18); kippX(-ny * 11); schattenX(-nx * 40);
-      glas.style.setProperty('--gx', ((e.clientX - r.left) / r.width * 100) + '%');
-      glas.style.setProperty('--gy', ((e.clientY - r.top) / r.height * 100) + '%');
-      glas.classList.add('ist-hover');
-    });
-    hero.addEventListener('pointerleave', function(){ zielMx(0); zielMy(0); kippY(0); kippX(0); schattenX(0); glas.classList.remove('ist-hover'); });
-  }
+  var hero = document.querySelector('.hero');
 
   /* ---------- Auftritt ---------- */
   gsap.timeline({defaults:{ease:'expo.out'}})
@@ -619,10 +525,9 @@ button{background:none;border:0;padding:0;cursor:pointer}
     .from('.hero__sub, .hero__knoepfe', {y:18, opacity:0, duration:.8, stagger:.08}, '-=.45')
     .from(glas, {y:80, opacity:0, duration:1.4}, '-=1');
 
-  /* ---------- Morph beim Wegscrollen: Ebenen ziehen auseinander, Glas kippt nach hinten ---------- */
+  /* ---------- Beim Wegscrollen: Bild zieht sich ruhig zurück ---------- */
   gsap.timeline({scrollTrigger:{trigger:hero, start:'top top', end:'bottom top', scrub:.6}})
-    .to(proxy, {morph:1, ease:'power1.in', onUpdate:neuZeichnen}, 0)
-    .to(glas.parentNode, {rotationX:24, transformPerspective:1400, transformOrigin:'50% 100%', scale:.84, yPercent:-6, ease:'none'}, 0)
+    .to(glas.parentNode, {scale:.88, yPercent:-8, opacity:.25, filter:'blur(6px)', ease:'power1.in'}, 0)
     .to('.hero__kopf', {y:-80, opacity:0, filter:'blur(10px)', ease:'power1.in'}, 0);
 
   gsap.utils.toArray('[data-rein]').forEach(function(el){
@@ -631,51 +536,19 @@ button{background:none;border:0;padding:0;cursor:pointer}
   gsap.from('[data-zeile]', {y:30, opacity:0, duration:.9, ease:'expo.out', stagger:.1, scrollTrigger:{trigger:'.zeilen', start:'top 85%', once:true}});
   gsap.from('.fuss__mark span', {yPercent:100, duration:1.1, ease:'expo.out', stagger:.05, scrollTrigger:{trigger:'.fuss__mark', start:'top 95%', once:true}});
 
-  /* ---------- Ticket: 3D-Kippen, Glanz, Früchte mit Tiefe ---------- */
+  /* ---------- Ticket: Früchte schweben beim Scrollen mit ---------- */
   var tbuehne = document.querySelector('.ticket-buehne');
   var deko = gsap.utils.toArray('.deko');
   gsap.from(deko, {scale:.4, opacity:0, rotation:'-=40', duration:1.3, ease:'expo.out', stagger:.12, scrollTrigger:{trigger:tbuehne, start:'top 80%', once:true}});
   deko.forEach(function(d){
     gsap.to(d, {yPercent:-(+d.dataset.tiefe) * 1.4, ease:'none', scrollTrigger:{trigger:'.code', start:'top bottom', end:'bottom top', scrub:true}});
   });
-  if (feinZeiger){
-    var tY = gsap.quickTo(ticket, 'rotationY', {duration:.7, ease:'power3'}), tX = gsap.quickTo(ticket, 'rotationX', {duration:.7, ease:'power3'});
-    var dekoX = deko.map(function(d){ return gsap.quickTo(d, 'x', {duration:1, ease:'power3'}); });
-    var dekoY = deko.map(function(d){ return gsap.quickTo(d, 'y', {duration:1, ease:'power3'}); });
-    tbuehne.addEventListener('pointermove', function(e){
-      var r = ticket.getBoundingClientRect();
-      var nx = gsap.utils.clamp(-1, 1, (e.clientX - r.left) / r.width * 2 - 1), ny = gsap.utils.clamp(-1, 1, (e.clientY - r.top) / r.height * 2 - 1);
-      tY(nx * 12); tX(-ny * 10);
-      ticket.style.setProperty('--gx', ((nx + 1) * 50) + '%'); ticket.style.setProperty('--gy', ((ny + 1) * 50) + '%');
-      ticket.classList.add('ist-hover');
-      deko.forEach(function(d, i){ var t = +d.dataset.tiefe; dekoX[i](nx * t); dekoY[i](ny * t * .8); });
-    });
-    tbuehne.addEventListener('pointerleave', function(){
-      tY(0); tX(0); ticket.classList.remove('ist-hover');
-      deko.forEach(function(d, i){ dekoX[i](0); dekoY[i](0); });
-    });
-  }
 
   /* ---------- Bowl-Explorer ---------- */
   var explorer = document.querySelector('.explorer');
   var slides = gsap.utils.toArray('.slide');
   var knoepfe = gsap.utils.toArray('.explorer__namen button');
   var mm = gsap.matchMedia();
-
-  // Glas kippt mit der Maus, Glanz folgt (alle Breiten mit feinem Zeiger)
-  if (feinZeiger){
-    slides.forEach(function(s){
-      var fig = s.querySelector('.slide__fig'), dreh = s.querySelector('.slide__dreh');
-      var ry = gsap.quickTo(dreh, 'rotationY', {duration:.8, ease:'power3'}), rx = gsap.quickTo(dreh, 'rotationX', {duration:.8, ease:'power3'});
-      fig.addEventListener('pointermove', function(e){
-        var r = fig.getBoundingClientRect(), nx = (e.clientX - r.left) / r.width, ny = (e.clientY - r.top) / r.height;
-        ry((nx - .5) * 28); rx(-(ny - .5) * 14);
-        fig.style.setProperty('--gx', (nx * 100) + '%'); fig.style.setProperty('--gy', (ny * 100) + '%');
-        fig.classList.add('ist-hover');
-      });
-      fig.addEventListener('pointerleave', function(){ ry(0); rx(0); fig.classList.remove('ist-hover'); });
-    });
-  }
 
   // Desktop: Bereich bleibt stehen, Scrollen morpht von Bowl zu Bowl
   mm.add('(min-width:1000px) and (min-height:620px)', function(){
@@ -692,13 +565,13 @@ button{background:none;border:0;padding:0;cursor:pointer}
       neu.classList.add('ist-aktiv');
       var altImg = alt.querySelector('.slide__img'), neuImg = neu.querySelector('.slide__img');
       laeuft = gsap.timeline({onComplete:function(){ alt.classList.remove('ist-aktiv'); }})
-        // altes Glas zerfliesst: unscharf, gestaucht, Inhalt läuft nach unten aus
-        .to(altImg, {filter:'blur(16px) drop-shadow(0 30px 40px rgba(8,0,16,.55))', scaleX:.72, scaleY:1.18, yPercent:-10*dir, opacity:0, clipPath:dir > 0 ? 'inset(0% 0% 100% 0%)' : 'inset(100% 0% 0% 0%)', duration:.55, ease:'power2.in'}, 0)
+        // altes Glas wird unscharf und leert sich
+        .to(altImg, {filter:'blur(16px) drop-shadow(0 30px 40px rgba(8,0,16,.55))', yPercent:-6*dir, opacity:0, clipPath:dir > 0 ? 'inset(0% 0% 100% 0%)' : 'inset(100% 0% 0% 0%)', duration:.55, ease:'power2.in'}, 0)
         .to(alt.querySelectorAll('.punkt, .slide__text'), {opacity:0, duration:.3}, 0)
         .to(alt.querySelector('.slide__wort'), {opacity:0, letterSpacing:'.3em', duration:.5, ease:'power2.in'}, 0)
         // neues Glas füllt sich von unten und wird scharf
-        .fromTo(neuImg, {filter:'blur(18px) drop-shadow(0 30px 40px rgba(8,0,16,.55))', scaleX:1.3, scaleY:.74, yPercent:12*dir, opacity:0, clipPath:dir > 0 ? 'inset(100% 0% 0% 0%)' : 'inset(0% 0% 100% 0%)'},
-          {filter:'blur(0px) drop-shadow(0 30px 40px rgba(8,0,16,.55))', scaleX:1, scaleY:1, yPercent:0, opacity:1, clipPath:'inset(0% 0% 0% 0%)', duration:1.1, ease:'expo.out'}, .3)
+        .fromTo(neuImg, {filter:'blur(18px) drop-shadow(0 30px 40px rgba(8,0,16,.55))', yPercent:8*dir, opacity:0, clipPath:dir > 0 ? 'inset(100% 0% 0% 0%)' : 'inset(0% 0% 100% 0%)'},
+          {filter:'blur(0px) drop-shadow(0 30px 40px rgba(8,0,16,.55))', yPercent:0, opacity:1, clipPath:'inset(0% 0% 0% 0%)', duration:1.1, ease:'expo.out'}, .3)
         .fromTo(neu.querySelector('.slide__wort'), {opacity:0, letterSpacing:'.35em'}, {opacity:.5, letterSpacing:'0em', duration:1.2, ease:'expo.out'}, .3)
         .fromTo(neu.querySelector('.slide__text'), {y:24*dir, opacity:0, filter:'blur(6px)'}, {y:0, opacity:1, filter:'blur(0px)', duration:.8, ease:'expo.out'}, .45)
         .fromTo(neu.querySelectorAll('.punkt'), {opacity:0}, {opacity:1, duration:.01, stagger:.09}, .6)
@@ -731,7 +604,7 @@ button{background:none;border:0;padding:0;cursor:pointer}
   // Mobil und Tablet: Bowls untereinander, jede füllt sich beim Scrollen
   mm.add('(max-width:999px), (max-height:619px)', function(){
     slides.forEach(function(s){
-      gsap.fromTo(s.querySelector('.slide__img'), {clipPath:'inset(100% 0% 0% 0%)', filter:'blur(14px)', scaleY:.8}, {clipPath:'inset(0% 0% 0% 0%)', filter:'blur(0px)', scaleY:1, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:s, start:'top 80%', once:true}});
+      gsap.fromTo(s.querySelector('.slide__img'), {clipPath:'inset(100% 0% 0% 0%)', filter:'blur(14px)'}, {clipPath:'inset(0% 0% 0% 0%)', filter:'blur(0px)', duration:1.2, ease:'expo.out', scrollTrigger:{trigger:s, start:'top 80%', once:true}});
       gsap.from(s.querySelectorAll('.slide__name, .slide__desc, .schicht, .groessen'), {y:24, opacity:0, duration:.8, ease:'expo.out', stagger:.07, scrollTrigger:{trigger:s, start:'top 70%', once:true}});
     });
   });
